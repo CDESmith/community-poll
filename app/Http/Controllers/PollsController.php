@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Poll;
+use App\Http\Resources\Poll as PollResource;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -20,7 +21,8 @@ class PollsController extends Controller
     	{
     		return response()->json(null, 404);
     	}
-    	return response()->json(Poll::findOrFail($id), 200);
+    	$response = new PollResource(Poll::findOrfail($id), 200);
+        return response()->json($response, 200);
     }
 
     public function store( Request $request )
