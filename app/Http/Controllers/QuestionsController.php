@@ -35,7 +35,7 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(Question::create($request->all(), 201));
+        return response()->json(Question::create($request->all()), 201);
     }
 
     /**

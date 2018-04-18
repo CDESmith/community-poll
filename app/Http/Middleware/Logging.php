@@ -20,7 +20,7 @@ class Logging
         return $next($request);
     }
 
-    public function terminate( $request, $response )
+    public function terminate($request, $response)
     {
         Log::debug($response->status());
     }

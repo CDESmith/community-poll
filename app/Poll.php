@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Poll extends Model
 {
-    //
-	protected $fillable = ['title'];
+    protected $fillable = ['title'];
 
-	protected $hidden = [
-		'questions',
-	];
+    protected $hidden = [
+    	'questions',
+    ];
 
-	public function questions()
-	{
-		return $this->hasMany('App\Question');
-	}
+    public function questions()
+    {
+    	return $this->hasMany('App\Question');
+    }
 }

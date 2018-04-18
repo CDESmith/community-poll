@@ -14,8 +14,8 @@ class BasicAuth
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle( $request, Closure $next )
+    public function handle($request, Closure $next)
     {
-        return Auth::onceBasic() ?: $next( $request );
+        return Auth::onceBasic() ?: $next($request);
     }
 }
